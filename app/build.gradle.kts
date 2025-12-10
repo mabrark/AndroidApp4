@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.trios2025dej.androidapp3"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.trios2025dej.androidapp3"
@@ -28,10 +26,17 @@ android {
             )
         }
     }
+
+    // ✅ REQUIRED for Maps, GPS, Tim Hortons UI, ViewBinding (Fixes YOUR ERROR)
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -43,6 +48,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    // Google Maps
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+
+    // GPS Location Services
+    implementation("com.google.android.gms:play-services-location:21.2.0")
+
+    // Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

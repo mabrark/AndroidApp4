@@ -1,3 +1,30 @@
 <resources>
+
+    <!-- App Name -->
     <string name="app_name">AndroidApp3</string>
+
+    <!-- GPS / Location -->
+    <string name="gps_location">GPS Location</string>
+    <string name="latitude_longitude">Latitude / Longitude</string>
+    <string name="address">Address</string>
+    <string name="location_not_found">Unable to get location</string>
+    <string name="search_location">Search Location</string>
+
+    <!-- Compass -->
+    <string name="compass">Compass</string>
+    <string name="compass_bearing">Compass Bearing: %1$d°</string>
+    <string name="compass_bearing_0">Compass Bearing: 0°</string>
+
+    <!-- Menu Options -->
+    <string name="menu_my_location">My Location</string>
+    <string name="menu_compass">Compass</string>
+    <string name="menu_search_address">Search Address</string>
+
+    <!-- Buttons -->
+    <string name="btn_search">Search</string>
+
+    <!-- Errors -->
+    <string name="error_permission_denied">Permission denied</string>
+    <string name="error_invalid_address">Invalid address entered</string>
+
 </resources>
