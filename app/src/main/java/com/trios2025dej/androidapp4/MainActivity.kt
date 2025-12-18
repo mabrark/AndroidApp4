@@ -1,9 +1,13 @@
-package com.trios2025dej.androidapp3
+package com.trios2025dej.androidapp4
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.trios2025dej.androidapp3.databinding.ActivityMainBinding
+import com.trios2025dej.androidapp4.databinding.ActivityMainBinding
+import com.trios2025dej.androidapp4.fragments.FeaturedFragment
+import com.trios2025dej.androidapp4.fragments.HomeFragment
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,10 +16,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // 1️⃣ Inflate layout FIRST
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // --- Existing Tim Hortons navigation ---
+        // 2️⃣ Load fragment AFTER layout exists
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment())
+                .commit()
+        }
+
+        // 3️⃣ Your existing button logic
         binding.btnMenu.setOnClickListener {
             startActivity(Intent(this, MenuActivity::class.java))
         }
@@ -24,22 +36,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CartActivity::class.java))
         }
 
-        // --- NEW GPS FEATURES ---
-
         binding.btnLocation.setOnClickListener {
             startActivity(Intent(this, LocationActivity::class.java))
-        }
-
-        binding.btnCompass.setOnClickListener {
-            startActivity(Intent(this, CompassActivity::class.java))
-        }
-
-        binding.btnSearchLocation.setOnClickListener {
-            startActivity(Intent(this, SearchLocationActivity::class.java))
-        }
-
-        binding.btnOpenMap.setOnClickListener {
-            startActivity(Intent(this, MapsActivity::class.java))
         }
     }
 }

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.trios2025dej.androidapp3"
+    namespace = "com.trios2025dej.androidapp4"
     compileSdk = 36
 
     defaultConfig {
@@ -48,6 +48,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("com.google.code.gson:gson:2.11.0")
+
+
 
     // Google Maps
     implementation("com.google.android.gms:play-services-maps:18.2.0")
